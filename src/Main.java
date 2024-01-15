@@ -49,24 +49,28 @@ public class Main {
                 case 3:
                     System.out.println("Mã sản phẩm");
                     int idUpdate = sc.nextInt();
-                    int index = productManager.getIndex(idUpdate);
-                    System.out.println("Mã sản phẩm");
-                    int idUpdate2 = sc.nextInt();
-                    System.out.println("Tên");
-                    String nameUpdate = sc.next();
-                    System.out.println("Giá");
-                    int priceUpdate = sc.nextInt();
-                    System.out.println("Số lượng");
-                    int quantityUpdate = sc.nextInt();
-                    System.out.println("mô tả");
-                    String desUpdate = sc.next();
-                    productManager.update(index, idUpdate2, nameUpdate, priceUpdate, quantityUpdate, desUpdate);
+                    if (productManager.checkId(idUpdate)) {
+                        int index = productManager.getIndex(idUpdate);
+                        System.out.println("Mã sản phẩm");
+                        int idUpdate2 = sc.nextInt();
+                        System.out.println("Tên");
+                        String nameUpdate = sc.next();
+                        System.out.println("Giá");
+                        int priceUpdate = sc.nextInt();
+                        System.out.println("Số lượng");
+                        int quantityUpdate = sc.nextInt();
+                        System.out.println("mô tả");
+                        String desUpdate = sc.next();
+                        productManager.update(index, idUpdate2, nameUpdate, priceUpdate, quantityUpdate, desUpdate);
+                    }else System.out.println("Id không hợp lệ");
                     break;
                 case 4:
                     System.out.println("Mã sản phẩm");
                     int idDelete = sc.nextInt();
-                    int indexDelete = productManager.getIndex(idDelete);
-                    productManager.delete(indexDelete);
+                    if (productManager.checkId(idDelete)) {
+                        int indexDelete = productManager.getIndex(idDelete);
+                        productManager.delete(indexDelete);
+                    }else System.out.println("Id không hợp lệ");
                     break;
                 case 5:
                     int sortChoice = -1;
