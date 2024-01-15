@@ -92,7 +92,6 @@ public class Main {
                     System.out.println(productManager.getMaxPriceProduct());
                     break;
                 case 7:
-                    System.out.println("sao");
                     String readChoice = "";
                     while (!readChoice.equals("Y") && !readChoice.equals("N")){
                         System.out.println("Đọc file sẽ mất toàn bộ dữ liệu trên bộ nhớ");
